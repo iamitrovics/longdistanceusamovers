@@ -1,0 +1,242 @@
+/*===============================
+=           Footer            =
+===============================*/
+
+#page-footer {
+	background-color: #fff;
+	padding-top: 35px;
+	padding-bottom: 50px;
+	@include media-breakpoint-only(md) {
+		padding-bottom: 0px;
+	}
+	@include media-breakpoint-down(sm) {
+		padding-top: 55px;
+		padding-bottom: 20px;
+	}
+	.col {
+		&:nth-of-type(1) {
+			min-width: 42%;
+			@include media-breakpoint-only(lg) {
+				min-width: 35%;
+			}
+		}
+		@include media-breakpoint-only(md) {
+			min-width: 50%;
+			margin-bottom: 50px;
+		}
+		@include media-breakpoint-down(sm) {
+			min-width: 100%!important;
+			margin-bottom: 30px;
+		}
+		/*&:nth-of-type(1) {
+			@include media-breakpoint-down(sm) {
+				order: 4;
+			}
+		}
+		&:nth-of-type(2) {
+			@include media-breakpoint-down(sm) {
+				order: 1;
+			}
+		}
+		&:nth-of-type(3) {
+			@include media-breakpoint-down(sm) {
+				order: 2;
+			}
+		}
+		&:nth-of-type(4) {
+			@include media-breakpoint-down(sm) {
+				order: 3;
+			}
+		}*/
+		h4 {
+			margin-top: 7px;
+			margin-bottom: 35px;
+			font-family: $mont-ebold;
+			font-size: 1.125em;
+			line-height: 25px;
+			text-align: left;
+			color: $nav-color;
+			text-transform: uppercase;
+			@include media-breakpoint-only(md) {
+				margin-bottom: 20px;
+			}
+			@include media-breakpoint-down(sm) {
+				margin-bottom: 15px;
+			}
+		}
+		.cert-secure {
+			.ceritifactions {
+				img {
+					display: inline-block;
+					vertical-align: middle;
+					margin-right: 15px;
+					@include media-breakpoint-only(lg) {
+						margin-right: 10px;
+						zoom: .7;
+					}
+					@include media-breakpoint-down(md) {
+						margin-right: 10px;
+						zoom: .8;
+					}
+				}
+			}
+			span.code {
+				display: block;
+				font-family: $mont-med;
+				font-size: 0.813em;
+				line-height: 30px;
+				text-align: left;
+				color: #000;
+				margin-top: 30px;
+				margin-bottom: 15px;
+			}
+			.security {
+				img {
+					margin-right: 10px;
+				}
+			}
+		}
+		.timings {
+			a, span {
+				display: block;
+				font-family: $mont-med;
+				font-size: 0.813em;
+				line-height: 25px;
+				color: #000;
+			}
+			a {
+				padding-bottom: 2px;
+				position: relative;
+				display: inline-block;
+				&:after {
+					display: block;
+				    height: 1px;
+				    background-color: #fff;
+				    content: '';
+				    position: absolute;
+				    bottom: 3px;
+				    width: 0px;
+				    left: 0;
+				    @include animate-fade;
+				}
+				&:hover {
+					color:$nav-color;
+					&:after {
+						background-color: $nav-color;
+						width: 100%;
+					}
+				}
+			}
+		}
+		.footer-sitemap {
+			@include media-breakpoint-down(sm) {
+				max-width: 298px;
+			}
+			ul {
+				li {
+					a {
+						display: inline-block;
+						font-family: $mont-med;
+						font-size: 0.813em;
+						line-height: 25px;
+						color: #000;
+						position: relative;
+						padding-bottom: 2px;
+						&:after {
+							display: block;
+						    height: 1px;
+						    background-color: #fff;
+						    content: '';
+						    position: absolute;
+						    bottom: 3px;
+						    width: 0px;
+						    left: 0;
+						    @include animate-fade;
+						}
+						&:hover {
+							color:$nav-color;
+							&:after {
+								background-color: $nav-color;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.follow-us {
+			ul {
+				li {
+					display: inline-block;
+					margin-right: 10px;
+					&:last-child {
+						margin-right: 0;
+					}
+					a {
+						font-size: 1.625em;
+						color: $nav-color;
+						&:hover {
+							color: $orange;
+						}
+					}
+				}
+			}
+			.footnote {
+				margin-top: 28px;
+				p {
+					font-family: $mont-med;
+					font-size: 0.813em;
+					line-height: 25px;
+					color: #000;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+.copy-bar {
+	background-color: #019AFB;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	.copy-bar-in {
+		@include media-breakpoint-up(sm) {
+			display: flex;
+			align-items: center;
+		}
+		@include media-breakpoint-down(sm) {
+			text-align: center;
+		}
+		small {
+			font-family: $mont-med;
+			font-size: 0.813em;
+			line-height: 25px;
+			color: #fff;
+		}
+		.footer-links {
+			margin-left: auto;
+			ul {
+				li {
+					display: inline-block;
+					a {
+						font-family: $mont-med;
+						font-size: 0.813em;
+						line-height: 25px;
+						color: #fff;
+						&:hover {
+							opacity: .7;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+/*=======End of Footer ========*/
+
+

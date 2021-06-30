@@ -1,0 +1,505 @@
+/*===============================
+=         Blog Listing         =
+===============================*/
+#blog-listing {
+    background-color: #FAF9F8;
+    padding-top: 53px;
+    padding-bottom: 85px;
+    @include breakpoint (desktop) {
+        padding-bottom: 75px;
+    }
+    @include media-breakpoint-only(lg) {
+        padding-bottom: 65px;
+    }
+    @include media-breakpoint-only(md) {
+       padding-bottom: 55px;
+    }
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 50px;
+    }
+    .blog-list {
+        @include media-breakpoint-up(xl) {
+            margin-left: -25px;
+            margin-right: -25px;
+        }
+        >[class*="col-"] {
+            @include media-breakpoint-up(xl) {
+               padding-left: 25px;
+                padding-right: 25px; 
+            }
+        }
+    }
+    .guide-box {
+        box-shadow: 0px 0px 20px #00000029;
+        border-radius: 20px;
+        position: relative;
+        margin-bottom: 67px;
+        @include breakpoint (desktop) {
+            margin-bottom: 50px;
+        }
+        @include media-breakpoint-only(lg) {
+            margin-bottom: 30px;
+        }
+        @include media-breakpoint-only(md) {
+           margin-bottom: 30px;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+        &:before {
+            @inclue centre(x);
+            top: 0;
+            content: '';
+            display: block;
+            border-radius: 20px 20px 0px 0px;
+            background-color: $blue-light;
+            width: 100%;
+            height: 21px;
+        }
+        .guide-image {
+            position: relative;
+            img {
+                width: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+            a {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: 0 0;
+                span {
+                    width: 64px;
+                    height: 64px;
+                    background: #fff;
+                    text-align: center;
+                    line-height: 64px;
+                    border-radius: 100%;
+                    @include centre(both);
+                    display: block;
+                    color: #000;
+                    font-size: 1.500em;
+                    margin-top: 20px;
+                    opacity: 0;
+                    -webkit-transition: .35s ease-in-out;
+                    transition: .35s ease-in-out;
+                }
+                &:hover {
+                    background-color: rgba($blue-light, .9);
+                    span {
+                        opacity: 1;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        .guide-content {
+            padding: 16px;
+            .date {
+                font-family: $mont-reg;
+                font-size: 0.813em;
+                line-height: 1.385;
+                color: $text-color;
+                display: block;
+                i {
+                    color: $text-color;
+                    font-size: 13px;
+                }
+            }
+            h5 {
+                margin-top: 15px;
+                margin-bottom: 15px;
+                font-family: $mont-semi;
+                font-size: 1.125em;
+                line-height: 1.444;
+                text-align: left;
+                @include animate-fade;
+                @include breakpoint (desktop) {
+                    font-size: 1.063em;
+                }
+                @include media-breakpoint-only(lg) {
+                    font-size: 1.063em;
+                }
+                @include media-breakpoint-only(md) {
+                   font-size: 1em;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 1em;
+                }
+                a {
+                    color: inherit;
+                }
+                &:hover {
+                    a {
+                        color: $blue-light;
+                    }
+                }
+            }
+            p {
+                font-family: $mont-reg;
+                font-size: 0.813em;
+                line-height: 1.385;
+                color: $text-color;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.pagination {
+    text-align: center;
+    ul {
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            &.active {
+                a {
+                    color: $blue-light;
+                }
+            }
+            a {
+                color: $text-color;
+                font-family: $mont-bold;
+                font-size: 1.625em;
+                letter-spacing: 2.08px;
+                padding-left: 14px;
+                padding-right: 14px;
+                &:hover {
+                    color: $blue-light;
+                    i {
+                        color: $blue-light;
+                    }
+                }
+                @include breakpoint (desktop) {
+                    font-size: 1.5em;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+                @include media-breakpoint-only(lg) {
+                    font-size: 1.3em;
+                    padding-left: 7px;
+                    padding-right: 7px;
+                }
+                @include media-breakpoint-only(md) {
+                    font-size: 1.1em;
+                    padding-left: 7px;
+                    padding-right: 7px;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 1em;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+                i {
+                    font-size: 40px;
+                    color: $heading-color;
+                    @include animate-fade;
+                    @include breakpoint (desktop) {
+                        font-size: 36px;
+                    }
+                    @include media-breakpoint-only(lg) {
+                        font-size: 32px;
+                    }
+                    @include media-breakpoint-only(md) {
+                        font-size: 28px;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*======  End of Blog Listing ======*/
+
+
+
+/*===============================
+=         Blog Detailed         =
+===============================*/
+#blog-detailed {
+    padding-top: 35px;
+    background-color: #FAF9F8;
+    .container {
+        @include media-breakpoint-up(lg) {
+            width: 909px;
+            max-width: 909px;
+        }
+    }
+    .blog-photo {
+        text-align: center;
+        margin-bottom: 35px;
+        img {
+            border-radius: 20px;
+        }
+    }
+    .image__caption {
+        font-style: italic;
+        font-size: 14px;
+        padding-top: 10px;
+    }
+
+    .faq-accordion {
+        .h4 {
+            font-family: $mont-reg;
+            font-size: 1.125em;
+            line-height: 1.222;
+            color: #000;
+            background: #eee;
+            border: 1px solid #ddd;
+            padding: 20px;
+            position: relative;
+            margin-bottom: 0;
+            padding-right: 45px;
+            text-align: left;
+            display: block;
+            @include breakpoint (desktop) {
+                font-size: 1.063em;
+            }
+            @include media-breakpoint-only(lg) {
+                font-size: 1em;
+            }
+            @include media-breakpoint-only(md) {
+                font-size: 1em;
+            }
+            @include media-breakpoint-down(sm) {
+                font-size: 0.9em;
+            }
+            &:focus {
+                outline: none!important;
+            }
+            &:hover {
+                cursor: pointer;
+            }
+            &:after {
+                @include centre(y);
+                right: 50px;
+                font-family: 'Font Awesome 5 Pro';
+                font-weight: 300;
+                color: #000;
+                font-size: 20px;
+                content: '\f067';
+                @include animate-fade;
+                @include breakpoint (desktop) {
+                    right: 40px;
+                }
+                @include media-breakpoint-only(lg) {
+                    right: 30px;
+                }
+                @include media-breakpoint-only(md) {
+                    right: 20px;
+                }
+                @include media-breakpoint-down(sm) {
+                    right: 20px;
+                }
+            }
+            &.ui-state-active {
+                &:after {
+                    -webkit-transform: translateY(-50%)  rotate(45deg);
+                    -moz-transform: translateY(-50%)  rotate(45deg);
+                    -ms-transform: translateY(-50%)  rotate(45deg);
+                    -o-transform: translateY(-50%)  rotate(45deg);
+                    transform: translateY(-50%)  rotate(45deg);
+                }
+            } 
+        }
+        .ui-accordion-content {
+            background-color: transparent;
+            padding: 25px 20px;
+            padding-right: 50px;
+            p {
+                @include regular-text2;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        p {
+            @include regular-text2;
+        }
+    }
+
+    .blog__main {
+        ul {
+            margin-bottom: 40px;
+            li {
+                font-family: $mont-reg;
+                font-size: 1.1em;
+                line-height: 1.585;
+                color: $text-color;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 25px;
+                position: relative;
+                &:before {
+                    background: $orange;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 100%;
+                    position: absolute;
+                    left:0px;
+                    top:13px;
+                    display: block;
+                    content:'';
+                }
+            }
+        }
+    }
+    p {
+        @include standard-text;
+    }
+    h2 {
+        @include heading-font;
+        text-transform: initial;
+        margin-bottom: 50px;
+        margin-top: 40px;
+        font-size: 1.75em;
+        @include media-breakpoint-only(lg) {
+            margin-bottom: 40px;
+            margin-top: 30px;
+            font-size: 1.7em;
+        }
+        @include media-breakpoint-only(md) {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+    }
+    h3 {
+        font-size: 24px;
+        line-height: 26px;
+        font-family: $mont-semi;
+        color: #3C444F;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        @include media-breakpoint-only(lg) {
+            margin-top: 40px;
+            margin-bottom: 25px;
+        }
+        @include media-breakpoint-only(md) {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+    }
+    .bottom-cta {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin-top: 50px;
+        @include media-breakpoint-down(sm) {
+            margin-top: 30px;
+            display: block;
+        }
+        .bcta-box {
+            width: 50%;
+            border: 1px solid $blue-light;
+            position: relative;
+            text-align: center;
+            background-color: #fff;
+            @include animate-fade;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+            &:hover {
+                background-color: $orange;
+                border-color: $orange;
+                h6 {
+                    color: #fff;
+                }
+            }
+            h6 {
+                font-size: 1.125em;
+                line-height: 1.444;
+                font-family: $mont-semi;
+                color: $grey;
+                @include animate-fade;
+                margin: 0;
+                &:hover {
+                    color:$white;
+                }
+                @include breakpoint (desktop) {
+                    font-size: 1.063em;
+                }
+                @include media-breakpoint-only(lg) {
+                    font-size: 1em;
+                }
+                @include media-breakpoint-only(md) {
+                    font-size: 1em;
+                    padding: 30px;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 0.9em;
+                    padding: 20px;
+                }
+                a {
+                    color: $grey;
+                    display: block;
+                    padding: 40px;
+                    @include media-breakpoint-down(sm) {
+                        padding:15px;
+                    }
+                    &:hover {
+                        color:$white;
+                    }
+                }
+            }
+            // a {
+            //     display: block;
+            //     position: absolute;
+            //     left: 0;
+            //     top: 0;
+            //     width: 100%;
+            //     height: 100%;
+            // }
+        }
+    }
+}
+
+.pagination {
+	margin-bottom: 50px;
+	span {
+		font-size: 1.15em;
+		border:none;
+		&.current {
+			color:$blue
+		}
+	}
+	a {
+		border:none;
+		font-size: 1.15em;
+		color:$black;
+		&:hover {
+			color:$orange;
+		}
+	}
+}
+
+.dataTables_wrapper {
+    overflow: scroll;
+}
+
+.video__holder {
+    text-align: center;
+    iframe {
+        margin:0px auto;
+    }
+}
+
+.author-box {
+    h4 {
+        font-size: 16px;
+    }
+}
