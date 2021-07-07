@@ -61,6 +61,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSB8KKL"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+
+    <?php 
+    $values = get_field( 'phone_number_per_city' );
+    if ( $values ) { ?>
+    
+        <script type="application/ld+json"> {
+        "@context" : "http://schema.org",
+        "@type" : "MovingCompany",
+        "name":"<?php the_field('custom_title_city_header'); ?>",
+        "url":"<?php echo get_permalink(); ?>",
+        "email":"info@longdistanceusamovers.com",
+        "image":"https://longdistanceusamovers.com/wp-content/uploads/2020/05/logo.png",
+        "telephone":"<?php the_field('phone_number_per_city'); ?>",
+        "openingHours": [
+        "Mon - Sat: 8:00 - 19:00"],
+        "aggregateRating":{
+        "@type":"AggregateRating",
+        "ratingValue":"5",
+        "reviewCount":"52"}
+        } </script>
+
+    <?php 
+    } else { ?>
+        <?php the_field('global_rich_snippet', 'options'); ?>
+    <?php } ?>
+
+    <?php the_field('global_rich_snippet_schema_code', 'options'); ?>
+
      <div class="menu-overlay"></div>
         <div class="main-menu-sidebar">
             <header class="visible-xs visible-sm visible-md">

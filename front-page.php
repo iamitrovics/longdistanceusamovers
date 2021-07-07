@@ -195,7 +195,7 @@
 
                                         if( $post_objects ): ?>
                                             <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-                                                <?php setup_postdata($post); ?>
+                                                <?php setup_postdata($post); ?>                                                             
 
                                                     <div class="review-box">
                                                         <div class="review-person-info">
