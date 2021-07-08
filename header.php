@@ -85,7 +85,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <?php 
     } else { ?>
-        <?php the_field('global_rich_snippet', 'options'); ?>
+
+   
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org/", 
+        "@type" : "MovingCompany",
+        "name":"Long Distance Movers",
+        "url":"https://longdistanceusamovers.com/",
+        "email":"info@longdistanceusamovers.com",
+        "image":"https://longdistanceusamovers.com/wp-content/uploads/2020/05/logo.png",
+        "telephone":"8772993827",
+        
+        "openingHours": [
+        "Mon - Sat: 8:00 - 19:00"],
+        
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": "6",
+            "reviewCount": "6"
+        },
+        "review": [
+        
+            <?php
+            $loop = new WP_Query( array( 'post_type' => 'testimonials', 'posts_per_page' => 6) ); ?>  
+
+            <?php $rowCount = 6; //GET THE COUNT ?>
+            <?php $i = 1; ?>
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+
+                {
+                    "@type": "Review",
+                    "name": "<?php the_field('city_test'); ?>",
+                    "reviewBody": "<?php the_field('testimonials_content_test', false, false); ?>",
+                    "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": "5",
+                    "bestRating": "5",
+                    "worstRating": "1"
+                    },
+                    "datePublished": "<?php the_field('date_test'); ?>",
+                    "author": {"@type": "Person", "name": "<?php the_title(''); ?>"},
+                    "publisher": {"@type": "Organization", "name": "Long Distance Movers"}
+                }
+
+                <?php if($i < $rowCount): ?>
+                    ,
+                <?php endif; ?>
+
+          
+                <?php $i++; ?>
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>              
+        
+        ]
+        }
+        </script>
+
     <?php } ?>
 
     <?php the_field('global_rich_snippet_schema_code', 'options'); ?>
