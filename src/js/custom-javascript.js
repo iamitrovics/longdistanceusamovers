@@ -350,7 +350,9 @@
             }
           }
         });
-      });   	   
+      });
+	  
+	  $('.blog__main a').attr("target","_blank");
 
 
 	});
