@@ -504,3 +504,43 @@
         font-size: 16px;
     }
 }
+
+.blog-filters {
+    margin-top: 75px;
+    margin-bottom: 29px;
+    @include media-breakpoint-down(lg) {
+        margin-top: 40px;
+    }
+    ul {
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            @include media-breakpoint-down(sm) {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-right: 10px;
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            a {
+                display: block;
+                color: #fff;
+                border-radius: 8px;
+                background-color: $blue;
+                padding: 3px 32px;
+                padding-top: 5px;
+                text-transform: uppercase;
+                text-align: center;
+                &.active, &:hover {
+                    background-color: $orange;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+}
