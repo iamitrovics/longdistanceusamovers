@@ -6,7 +6,12 @@
             <div class="breadcrumb">
                 <ul>
                     <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-                    <li><a href="<?php echo get_permalink(); ?>"><?php single_cat_title(); ?></a></li>
+                    <?php
+					 global $post;
+					 $categories = get_the_category($post->ID);
+					 $cat_link = get_category_link($categories[0]->cat_ID);
+					 echo '<li><a href="'.$cat_link.'">'.$categories[0]->cat_name.'</a></li>' 
+					 ?>
                 </ul>
             </div>
         </div>
