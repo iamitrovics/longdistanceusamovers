@@ -389,6 +389,7 @@ span.wpcf7-not-valid-tip {
 	justify-content: space-between;
 	align-items: center;
 	border-radius: 32px;
+	margin-bottom: 30px;
 	@include media-breakpoint-down(md) {
 		display: block;
 		text-align: center;
@@ -418,6 +419,8 @@ span.wpcf7-not-valid-tip {
 		height: 52px;
 		line-height: 52px;
 		font-family: $mont-semi;
+		width: 180px;
+		text-align: center;
 		&:hover {
 			background:$white;
 			color:$orange;
