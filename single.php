@@ -158,14 +158,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 					// no layouts found
 
 			endif; ?>
-			<div class="author-box">
-			    
-				<?php while ( have_posts() ) : the_post(); ?>
-				<h4><?php the_author(); ?></h4>
-				<p><?php echo nl2br( get_the_author_meta( 'description' ) ); ?></p>
-				<?php endwhile; // end of the loop. ?> 
-				
-			</div>
+			<div class="author-desc">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+                <div class="author-content">
+                    <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+                    <p><?php the_author_description(); ?></p>
+                </div>
+                <!-- /.author-content -->
+            </div>
 			<hr>
 
 			<div id="bottom-form">
