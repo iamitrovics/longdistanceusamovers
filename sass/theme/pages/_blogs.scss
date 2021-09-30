@@ -1,7 +1,7 @@
 /*===============================
 =         Blog Listing         =
 ===============================*/
-#blog-listing {
+#blog-listing, .similar-posts {
     background-color: #FAF9F8;
     padding-top: 53px;
     padding-bottom: 85px;
@@ -145,6 +145,20 @@
                 margin-bottom: 0;
             }
         }
+    }
+}
+
+.similar-posts {
+    &.first-child-box {
+        padding-top: 50px;
+    }
+    &.last-child-box {
+        padding-bottom: 50px;
+    }
+    padding: 0;
+    h2 {
+        margin-bottom: 30px;
+        text-align: center;
     }
 }
 
@@ -413,77 +427,76 @@
             margin-bottom: 20px;
         }
     }
-    .bottom-cta {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        margin-top: 50px;
+}
+.bottom-cta {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    @include media-breakpoint-down(sm) {
+        margin-top: 30px;
+        display: block;
+    }
+    .bcta-box {
+        width: 50%;
+        border: 1px solid $blue-light;
+        position: relative;
+        text-align: center;
+        background-color: #fff;
+        @include animate-fade;
         @include media-breakpoint-down(sm) {
-            margin-top: 30px;
-            display: block;
+            width: 100%;
         }
-        .bcta-box {
-            width: 50%;
-            border: 1px solid $blue-light;
-            position: relative;
-            text-align: center;
-            background-color: #fff;
-            @include animate-fade;
-            @include media-breakpoint-down(sm) {
-                width: 100%;
-            }
-            &:hover {
-                background-color: $orange;
-                border-color: $orange;
-                h6 {
-                    color: #fff;
-                }
-            }
+        &:hover {
+            background-color: $orange;
+            border-color: $orange;
             h6 {
-                font-size: 1.125em;
-                line-height: 1.444;
-                font-family: $mont-semi;
+                color: #fff;
+            }
+        }
+        h6 {
+            font-size: 1.125em;
+            line-height: 1.444;
+            font-family: $mont-semi;
+            color: $grey;
+            @include animate-fade;
+            margin: 0;
+            &:hover {
+                color:$white;
+            }
+            @include breakpoint (desktop) {
+                font-size: 1.063em;
+            }
+            @include media-breakpoint-only(lg) {
+                font-size: 1em;
+            }
+            @include media-breakpoint-only(md) {
+                font-size: 1em;
+                padding: 30px;
+            }
+            @include media-breakpoint-down(sm) {
+                font-size: 0.9em;
+                padding: 20px;
+            }
+            a {
                 color: $grey;
-                @include animate-fade;
-                margin: 0;
+                display: block;
+                padding: 40px;
+                @include media-breakpoint-down(sm) {
+                    padding:15px;
+                }
                 &:hover {
                     color:$white;
                 }
-                @include breakpoint (desktop) {
-                    font-size: 1.063em;
-                }
-                @include media-breakpoint-only(lg) {
-                    font-size: 1em;
-                }
-                @include media-breakpoint-only(md) {
-                    font-size: 1em;
-                    padding: 30px;
-                }
-                @include media-breakpoint-down(sm) {
-                    font-size: 0.9em;
-                    padding: 20px;
-                }
-                a {
-                    color: $grey;
-                    display: block;
-                    padding: 40px;
-                    @include media-breakpoint-down(sm) {
-                        padding:15px;
-                    }
-                    &:hover {
-                        color:$white;
-                    }
-                }
             }
-            // a {
-            //     display: block;
-            //     position: absolute;
-            //     left: 0;
-            //     top: 0;
-            //     width: 100%;
-            //     height: 100%;
-            // }
         }
+        // a {
+        //     display: block;
+        //     position: absolute;
+        //     left: 0;
+        //     top: 0;
+        //     width: 100%;
+        //     height: 100%;
+        // }
     }
 }
 

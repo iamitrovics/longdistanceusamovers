@@ -274,19 +274,159 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		</div>
 		<!-- /.container -->
-	
-		<div class="bottom-cta">
-			<div class="bcta-box">
-				<h6><?php previous_post_link( '%link', '%title', TRUE ); ?> </h6>
-			</div>
-			<!-- /.bcta-box -->
-			<div class="bcta-box">
-				<h6><?php next_post_link( '%link', '%title', TRUE ); ?> </h6>
-			</div>
-			<!-- /.bcta-box -->
-		</div>
-		<!-- /.bottom-cta -->
 	</div>
 	<!-- /#blog-detailed -->
+
+	<section class="similar-posts first-child-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Recent posts</h2>
+                    <div class="posts-list">
+                        <div class="row">
+
+                        <?php
+                            $loop = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' => 3) ); ?>  
+                            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+							<div class="col-lg-4 col-md-6">
+								<div class="guide-box">
+									<div class="guide-image">
+										<?php 
+										$values = get_field( 'featured_image_blog' );
+										if ( $values ) { ?>
+
+											<?php
+											$imageID = get_field('featured_image_blog');
+											$image = wp_get_attachment_image_src( $imageID, 'blog-image' );
+											$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+											?> 
+
+											<img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+
+										<?php 
+										} else { ?>
+
+											<img src="<?php bloginfo('template_directory'); ?>/img/sliders/guide.jpg" alt="" class="img-responsive">
+
+										<?php } ?>
+										<a href="<?php echo get_permalink(); ?>" tabindex="0"><span><i class="fal fa-long-arrow-right"></i></span></a>
+									</div>
+									<div class="guide-content">
+										<span class="date"><i class="fal fa-clock"></i> <?php echo get_the_date( 'F j, Y' ); ?></span>
+										<h5><a href="<?php echo get_permalink(); ?>" tabindex="0"><?php the_title(''); ?></a></h5>
+									</div>
+									<!-- /.guide-content -->
+								</div>
+								<!-- /.guide-box -->
+							</div>
+							<!-- /.col-lg-4 col-md-6 --> 
+
+                                <?php endwhile; ?>
+                            <?php wp_reset_postdata(); ?>    
+                        <?php wp_reset_query(); ?>
+
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.posts-list -->
+                </div>
+                <!-- /.col-md-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.similar-posts -->
+
+    <section class="similar-posts last-child-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Related posts</h2>
+                    <div class="posts-list">
+                        <div class="row">
+
+                            <?php
+                                $categories =   get_the_category();
+                                // print_r($categories);
+                                $rp_query   =  new WP_Query ([
+                                    'posts_per_page'        =>  3,
+                                    'post__not_in'          =>  [ $post->ID ],
+                                    'cat'                   =>  !empty($categories) ? $categories[0]->term_id : null,
+
+                                ]);
+
+                                if ( $rp_query->have_posts() ) {
+                                    while( $rp_query->have_posts() ) {
+                                        $rp_query->the_post();
+                                        ?>
+
+										<div class="col-lg-4 col-md-6">
+											<div class="guide-box">
+												<div class="guide-image">
+													<?php 
+													$values = get_field( 'featured_image_blog' );
+													if ( $values ) { ?>
+
+														<?php
+														$imageID = get_field('featured_image_blog');
+														$image = wp_get_attachment_image_src( $imageID, 'blog-image' );
+														$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+														?> 
+
+														<img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> 
+
+													<?php 
+													} else { ?>
+
+														<img src="<?php bloginfo('template_directory'); ?>/img/sliders/guide.jpg" alt="" class="img-responsive">
+
+													<?php } ?>
+													<a href="<?php echo get_permalink(); ?>" tabindex="0"><span><i class="fal fa-long-arrow-right"></i></span></a>
+												</div>
+												<div class="guide-content">
+													<span class="date"><i class="fal fa-clock"></i> <?php echo get_the_date( 'F j, Y' ); ?></span>
+													<h5><a href="<?php echo get_permalink(); ?>" tabindex="0"><?php the_title(''); ?></a></h5>
+												</div>
+												<!-- /.guide-content -->
+											</div>
+											<!-- /.guide-box -->
+										</div>
+										<!-- /.col-lg-4 col-md-6 --> 
+
+                                        <?php
+                                    }
+
+                                    wp_reset_postdata();
+
+                                }
+
+                            ?>
+
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.posts-list -->
+                </div>
+                <!-- /.col-md-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.similar-posts -->
+
+	<div class="bottom-cta">
+		<div class="bcta-box">
+			<h6><?php previous_post_link( '%link', '%title', TRUE ); ?> </h6>
+		</div>
+		<!-- /.bcta-box -->
+		<div class="bcta-box">
+			<h6><?php next_post_link( '%link', '%title', TRUE ); ?> </h6>
+		</div>
+		<!-- /.bcta-box -->
+	</div>
+	<!-- /.bottom-cta -->
 
 <?php get_footer(); ?>
