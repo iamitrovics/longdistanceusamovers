@@ -149,6 +149,55 @@ $container = get_theme_mod( 'understrap_container_type' );
 								</div>
 								<!-- // single  -->
 
+								<?php elseif( get_row_layout() == 'featured_article' ): ?>    
+									<?php
+										$post_objects = get_sub_field('featured_article_list');
+
+										if( $post_objects ): ?>
+											<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
+												<?php setup_postdata($post); ?>
+													
+												<div class="featured-article-box">
+													<div class="guide-box">
+														<div class="guide-image">
+															<a href="<?php echo get_permalink(); ?>" tabindex="0" target="_blank">
+															<?php 
+															$values = get_field( 'featured_image_blog' );
+															if ( $values ) { ?>
+
+																<?php
+																$imageID = get_field('featured_image_blog');
+																$image = wp_get_attachment_image_src( $imageID, 'blog-image' );
+																$alt_text = get_post_meta($imageID , '_wp_attachment_image_alt', true);
+																?> 
+
+																<img class="img-responsive" alt="<?php echo $alt_text; ?>" src="<?php echo $image[0]; ?>" /> </a>
+
+															<?php 
+															} else { ?>
+
+															<a href="<?php echo get_permalink(); ?>" tabindex="0" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/img/sliders/guide.jpg" alt="" class="img-responsive"></a>
+
+															<?php } ?>
+														</div>
+														<div class="guide-content">
+															<h3><a href="<?php echo get_permalink(); ?>" tabindex="0" target="_blank"><?php the_title(''); ?></a></h3>
+															<div class="read-more">
+																<a href="<?php echo get_permalink(); ?>" target="_blank">Read More</a>
+															</div>
+															<!-- /.read-more -->
+														</div>
+														<!-- /.guide-content -->
+													</div>
+													<!-- /.guide-box -->
+												</div>
+												<!-- /.featured-article -->
+													
+											<?php endforeach; ?>
+										<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+									<?php endif; ?>
+									<?php wp_reset_postdata(); ?>
+
 								<?php elseif( get_row_layout() == 'table' ): ?>
 
 									<table style="width:100%" class="single-table">
