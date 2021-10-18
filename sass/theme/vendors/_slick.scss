@@ -235,7 +235,7 @@ $slick-opacity-not-active: 0.25 !default;
     }
 }
 
-#guides-slider, #prepare-slider {
+#guides-slider, #prepare-slider , #nav-slider {
     .slick-prev {
         left: -60px;
         @media (min-width: 1900px) {
@@ -307,5 +307,26 @@ $slick-opacity-not-active: 0.25 !default;
                 color: $blue;
             }
         }
+    }
+}
+
+#nav-slider {
+    .slick-prev, .slick-next {
+        margin-top: 0px;
+        &:before {
+            color:$yellow;
+        }
+    }
+    .slick-prev {
+        left:-60px;
+        @include media-breakpoint-down(lg) {
+            left:0px;
+        }
+    }
+    .slick-next {
+        right:-60px;
+        @include media-breakpoint-down(lg) {
+            right:0px;
+        }        
     }
 }

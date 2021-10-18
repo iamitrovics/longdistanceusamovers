@@ -264,6 +264,43 @@
 			
 		});
 
+        $('#nav-slider').slick({
+            infinite: false,
+            speed: 300,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            dots: false,
+            arrows: true,
+            autoplay: true,
+            infinite: true,
+            autoplaySpeed: 4000,
+            responsive: [{
+                    breakpoint: 1199,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                    }
+                },
+
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                },
+
+            ]
+        });        
+
+
 		$(document).ready (function(){
 			$('#open-quote').click(function () {
 				$('#quote-full').slideDown(500);
@@ -339,6 +376,21 @@
 
 	   $(function() {
         $('.quote-cta--single a.btn-cta').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top - 100
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+
+	  $(function() {
+        $('a.btn-down').click(function() {
           if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
