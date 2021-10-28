@@ -518,3 +518,16 @@
         }
     }    
 }
+
+#find-us .map .map-filters .bootstrap-select .btn {
+    line-height: normal;
+    padding-top: 0;
+    padding-bottom: 0;
+    &:after {
+        content: "\e918";
+    }
+}
+
+#find-us .map .map-search button[type=submit]:after {
+    font-family: 'icomoon';
+}
