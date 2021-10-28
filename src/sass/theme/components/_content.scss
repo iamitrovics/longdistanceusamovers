@@ -1,0 +1,15 @@
+.wraper {
+    margin-top: 87px;
+    @include bp(md-down) {
+        margin-top: 107px;
+    }
+}
+.container {
+    @media (min-width: 1400px) {
+        width: 1365px;
+        max-width: 1365px;
+    }
+}
+.aligncenter, .ml-auto, .mx-auto {
+    margin-left: auto!important;
+}

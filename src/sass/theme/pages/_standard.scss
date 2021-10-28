@@ -1,0 +1,75 @@
+/*===============================
+=           404 Page           =
+===============================*/
+
+#error-page {
+    background-color: #FAF9F8;
+    padding-top: 185px;
+    @include bp(desktop) {
+        padding-top: 150px;
+    }
+    @include bp(lg) {
+        padding-top: 130px;
+    }
+    @include bp(md) {
+        padding-top: 110px;
+    }
+    @include bp(sm-down) {
+        padding-top: 110px;
+    }
+    h1 {
+        font-family: $mont-ebold;
+        font-size: 4.125em;
+        line-height: 1.237;
+        color: $blue;
+        margin: 0;
+        padding: 0;
+        @include bp(desktop) {
+            font-size: 3.600em;
+        }
+        @include bp(lg) {
+            font-size: 3.100em;
+        }
+        @include bp(md) {
+            font-size: 2.500em;
+        }
+        @include bp(sm-down) {
+            font-size: 2.000em;
+        }
+    }
+    h2 {
+        font-family: $mont-light;
+        font-size: 6.625em;
+        color: #fa0;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        @include bp(desktop) {
+            font-size: 6em;
+            margin-top: 70px;
+            margin-bottom: 70px;
+        }
+        @include  bp(small-lap) {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        @include bp(lg) {
+            font-size: 5em;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        @include bp(md) {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            font-size: 4em;
+        }
+        @include bp(sm-down) {
+            font-size: 3em;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+    img {
+        max-width:907px;
+        width: 50vw;
+    }
+}
