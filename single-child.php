@@ -203,10 +203,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 									<div class="faq-accordion">
 									<?php if( have_rows('accordion_list') ): ?>
 										<?php while( have_rows('accordion_list') ): the_row(); ?>
-											<span class="h4"><?php the_sub_field('heading'); ?></span>
-											<div class="panel">
-											<?php the_sub_field('content'); ?>
+
+											<div class="faq-box">
+												<h4><?php the_sub_field('heading'); ?></h4>
+												<div>
+													<?php the_sub_field('content'); ?>
+												</div>
 											</div>
+											<!-- /.faq-box -->
 										<?php endwhile; ?>
 									<?php endif; ?>
 									</div>

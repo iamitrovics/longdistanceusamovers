@@ -41,7 +41,7 @@
 
 					<ul class="nav nav-tabs"  role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" id="home-tab" data-toggle="tab" href="#moving-quote" role="tab" aria-controls="home" aria-selected="true">Moving Quote</a>
+							<a class="nav-link" id="home-tab" data-toggle="tab" href="#moving-quote" role="tab" aria-controls="home" aria-selected="true">Moving Quote</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" id="profile-tab" data-toggle="tab" href="#auto-quote" role="tab" aria-controls="profile" aria-selected="false">Auto Quote</a>
@@ -406,10 +406,15 @@
                                         <div class="faq-accordion">
                                         <?php if( have_rows('qa_list') ): ?>
                                             <?php while( have_rows('qa_list') ): the_row(); ?>
-                                                <span class="h4"><?php the_sub_field('question'); ?></span>
-                                                <div class="panel">
-                                                <?php the_sub_field('answer'); ?>
-                                                </div>
+
+                                            <div class="faq-box">
+												<h4><?php the_sub_field('question'); ?></h4>
+												<div>
+													<?php the_sub_field('answer'); ?>
+												</div>
+											</div>
+											<!-- /.faq-box -->
+
                                             <?php endwhile; ?>
                                         <?php endif; ?>
                                         </div>
@@ -452,40 +457,42 @@
     <!-- // efatured article  -->
 
     <div class="container" id="form-wrapper--featured">
-        <div id="bottom-form">
 
-                <ul class="nav nav-tabs"  role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#moving-quote" role="tab" aria-controls="home" aria-selected="true">Moving Quote</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#auto-quote" role="tab" aria-controls="profile" aria-selected="false">Auto Quote</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#quote-for-both" role="tab" aria-controls="contact" aria-selected="false">Quote for Both</a>
-                    </li>
-                </ul>
+			<div id="bottom-form">
 
-                <div class="tab-content" id="myTabContent">
+				<ul class="nav nav-tabs"  role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#moving-quotex" role="tab" aria-controls="home" aria-selected="true">Moving Quote</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#auto-quotex" role="tab" aria-controls="profile" aria-selected="false">Auto Quote</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#quote-for-bothx" role="tab" aria-controls="contact" aria-selected="false">Quote for Both</a>
+					</li>
+				</ul>
 
-                    <div class="tab-pane fade show active" id="moving-quote" role="tabpanel" aria-labelledby="home-tab">
-                        <?php echo do_shortcode('[contact-form-7 id="135964" title="Moving Quote"]'); ?>
-                    </div>
-                    <!-- // tab 1  -->
-                    <div class="tab-pane fade" id="auto-quote" role="tabpanel" aria-labelledby="profile-tab">
-                        <?php echo do_shortcode('[contact-form-7 id="135733" title="Auto Quote"]'); ?>
-                    </div>
-                    <!-- // tab 2  -->
-                    <div class="tab-pane fade" id="quote-for-both" role="tabpanel" aria-labelledby="contact-tab">
-                        <?php echo do_shortcode('[contact-form-7 id="135734" title="Quote for Both"]'); ?>
-                    </div>
-                    <!-- // tab 3  -->
+				<div class="tab-content" id="myTabContent">
 
-                </div>
-                <!-- // tabs content  -->
+					<div class="tab-pane fade show active" id="moving-quotex" role="tabpanel" aria-labelledby="home-tab">
+						<?php echo do_shortcode('[contact-form-7 id="135964" title="Moving Quote"]'); ?>
+					</div>
+					<!-- // tab 1  -->
+					<div class="tab-pane fade" id="auto-quotex" role="tabpanel" aria-labelledby="profile-tab">
+						<?php echo do_shortcode('[contact-form-7 id="135733" title="Auto Quote"]'); ?>
+					</div>
+					<!-- // tab 2  -->
+					<div class="tab-pane fade" id="quote-for-bothx" role="tabpanel" aria-labelledby="contact-tab">
+						<?php echo do_shortcode('[contact-form-7 id="135734" title="Quote for Both"]'); ?>
+					</div>
+					<!-- // tab 3  -->
 
-            </div>
-            <!-- // bottom form  -->        
+				</div>
+				<!-- // tabs content  -->
+
+			</div>
+			<!-- // bottom form  -->
+    
     </div>
     <!-- // container  -->
 

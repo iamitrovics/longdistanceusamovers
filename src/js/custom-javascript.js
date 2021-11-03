@@ -416,6 +416,7 @@
         });
 
         $('.blog__main a').attr("target", "_blank");
+
         $('.hero-form .nav-tabs').each(function () {
             var $active, $content, $links = $(this).find('a');
             $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
@@ -437,6 +438,8 @@
                 e.preventDefault();
             });
         });
+
+
         $('#reviews .nav-tabs').each(function () {
             var $active, $content, $links = $(this).find('a');
             $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
@@ -460,6 +463,29 @@
             });
         });
 
+        // $('#bottom-form .nav-tabs').each(function () {
+        //     var $active, $content, $links = $(this).find('a');
+        //     $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
+        //     $active.addClass('active');
+        //     $content = $($active.attr('href'));
+        //     $links.not($active).each(function () {
+        //         $($(this).attr('href')).hide();
+        //     });
+        //     $(this).on('click', 'a', function (e) {
+        //         var c = this;
+        //         $active.removeClass('active');
+        //         $content.fadeOut("fast", function () {
+        //             $active = $(c);
+        //             $content = $($(c).attr('href'));
+
+        //             $active.addClass('active');
+        //             $content.fadeIn("fast");
+        //             $('#reviews .review-slider').slick("setPosition", 0);
+        //         });
+        //         e.preventDefault();
+        //     });
+        // });
+
         $('#bottom-form .nav-tabs').each(function () {
             var $active, $content, $links = $(this).find('a');
             $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
@@ -477,11 +503,11 @@
 
                     $active.addClass('active');
                     $content.fadeIn("fast");
-                    $('#reviews .review-slider').slick("setPosition", 0);
                 });
                 e.preventDefault();
             });
         });
+
 
     });
 })(jQuery);
