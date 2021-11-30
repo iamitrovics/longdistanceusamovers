@@ -430,14 +430,26 @@ $container = get_theme_mod( 'understrap_container_type' );
 									<!-- /.col-lg-5 -->
 									<div class="col-lg-7">
 										<div class="faq-accordion">
-											<?php if( have_rows('faq_list') ): ?>
-											   <?php while( have_rows('faq_list') ): the_row(); ?>
-													<h4><?php the_sub_field('question'); ?></h4>
-													<div>
-														<?php the_sub_field('answer'); ?>
-													</div>												   
-											   <?php endwhile; ?>
-											<?php endif; ?>
+
+											<div class="accordion-section">
+												<div class="faq-accordion">
+												<?php if( have_rows('faq_list') ): ?>
+													<?php while( have_rows('faq_list') ): the_row(); ?>
+
+														<div class="faq-box">
+															<h4><?php the_sub_field('question'); ?></h4>
+															<div>
+																<?php the_sub_field('answer'); ?>
+															</div>
+														</div>
+														<!-- /.faq-box -->
+													<?php endwhile; ?>
+												<?php endif; ?>
+												</div>
+												<!-- // acc  -->
+											</div>
+											<!-- // section  -->
+
 										</div>
 										<!-- /#faq-accordion -->
 									</div>
