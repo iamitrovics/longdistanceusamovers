@@ -594,6 +594,11 @@
             &:last-of-type {
                 margin-right: 0;
             }
+            &.current-cat {
+                a {
+                    background-color: $orange;
+                }
+            }
             a {
                 display: block;
                 color: #fff;
