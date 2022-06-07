@@ -50,6 +50,7 @@ if ( ! function_exists ( 'understrap_setup' ) ) {
 			'footer-sitemap' => __( 'Footer Sitemap Menu', 'understrap' ),
 			'quick-sitemap' => __( 'Quick Links Menu', 'understrap' ),
 			'services-sitemap' => __( 'Services Menu', 'understrap' ),
+			'mobile' => __( 'Mobile Menu', 'understrap' ),
 		) );
 
 		/*
