@@ -1159,3 +1159,52 @@
         clear: both;
     }       
 }
+
+.pinned {
+    position: relative;
+    &:after {
+        content:'';
+        @include centre(both);
+        font-size: 20px;
+        background: url('../img/ico/map-marker-alt-light.svg') no-repeat;
+
+        background-size:13px;
+        background-position: center center;
+        width: 24px;
+        height: 24px;
+        z-index: 9999;
+    }
+}
+
+#hero-banner .overlay .container .hero-form .tab-pane .form-col {
+    .your-state, .your-stateto {
+        position: absolute;
+        top:3px;
+        right:19px;
+        // &:after {
+        //     content:'';
+        //     @include centre(both);
+        //     font-size: 20px;
+        //     background: url('../img/ico/map-marker-alt-light.svg') no-repeat;
+        //     background-size:13px;
+        //     background-position: center center;
+        //     width: 24px;
+        //     height: 24px;
+        //     z-index: 9999;                
+        // }
+        input {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border:none;
+            color:$white;
+            background-color: $blue;
+            border-radius: 9px;
+            padding:0px;
+            font-size: 13px;
+            position: relative;
+            z-index: 4000;
+        }
+    }
+}
