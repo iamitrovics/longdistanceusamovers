@@ -886,6 +886,30 @@
                     margin-bottom: 25px;
                 }
             }
+            ul {
+                margin-bottom: 30px;
+                li {
+                    font-family: $mont-reg;
+                    font-size: 16px;
+                    line-height: 1.585;
+                    color: $text-color;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    padding-left: 25px;
+                    position: relative;
+                    &:before {
+                        background: $orange;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 100%;
+                        position: absolute;
+                        left:0px;
+                        top:13px;
+                        display: block;
+                        content:'';
+                    }
+                }
+            }
             p {
                 @include regular-text2;
             }
